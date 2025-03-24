@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogão</title>
+</head>
+
+<body style="background-color: black;">
+    <h1 style="text-align: center; color:white" ;>Não clique</h1>
+    <fieldset>
+        <h3 style="text-align: center; color: white;">Não aperte no botão nos proximos 60 segundos</h3>
+        <div style="text-align: center;">
+            <button id="botao" style="padding: 35px 70px;">NÃO APERTE</button>
+        </div>
+        <div id="imagem" style="display: none; text-align: center; margin-top: 30px;">
+            <img src="https://imagem.natelinha.uol.com.br/original/Neymar_366ecd1b4137dea7853213d6facff5306cbdc23e.jpeg" alt="Imagem de Vitória" width="300" />
+        </div>
+        <p id="mensagem" style="color: white; text-align: center;"></p>
+
+        <script>
+            let venceu = false;
+
+            document.getElementById("botao").addEventListener("click", () => {
+                document.getElementById("mensagem").innerText = "Você perdeu. Ansioso ein";
+                document.getElementById("botao").disabled = true;
+            });
+
+
+            setTimeout(function () {
+                if (!venceu) {
+                    let mensagem = document.getElementById("mensagem");
+                    mensagem.innerText = "Parabéns! Você ganhou 🏆";
+                    mensagem.style.color = "white";
+                    document.getElementById("imagem").style.display = "block";
+                }
+            }, 60000);
+        </script>
+    </fieldset>
+
+
+</body>
+
+</html>
